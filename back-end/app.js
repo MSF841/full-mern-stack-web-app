@@ -75,8 +75,17 @@ app.post('/messages/save', async (req, res) => {
       error: err,
       status: 'failed to save the message to the database',
     })
-  }
+  }  
 })
-
+// About page route
+app.get('/about', (req, res) => {
+  res.json({
+    title: 'About Me',
+    intro: "Hello, my name is Maurice Farfan. I'm a senior majoring in Computer Science. I was born and raised in Queens, but being Peruvian is in my DNA.",
+    technology: 'I got into Computer Science because it seemed like the career path that aligned most with my interests. I have always been interested in technology and gaming, and I saw Computer Science as a way to combine those interests with my career. At the time, Computer Science was also a field that offered a lot of opportunities and was in high demand. Now that I’m in my senior year, I’ve realized that the typical software engineering route that many CS majors take is not for me. I prefer a more hands-on approach to hardware and IT. I still believe that learning software concepts is important because it helps me understand how technology works as a whole.',
+    hobbies: 'Aside from technology, my hobbies include sports such as soccer, volleyball, and basketball. Despite being from New York, I’m a Minnesota Timberwolves fan. I’m also really into music, and some of my favorite artists are Keshi, Daniel Caesar, and Drake. I’m always interested in listening to new songs and discovering new artists. I also enjoy playing music. I’ve been playing guitar for a few years, I play drums, and I’m currently trying to learn piano.',
+    image: 'http://localhost:7002/about_photo.jpeg'
+  })
+})
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!
